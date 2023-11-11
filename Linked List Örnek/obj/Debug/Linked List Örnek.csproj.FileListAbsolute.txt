@@ -1,0 +1,8 @@
+C:\Users\samet\source\repos\Linked List Örnek\Linked List Örnek\bin\Debug\Linked List Örnek.exe.config
+C:\Users\samet\source\repos\Linked List Örnek\Linked List Örnek\bin\Debug\Linked List Örnek.exe
+C:\Users\samet\source\repos\Linked List Örnek\Linked List Örnek\bin\Debug\Linked List Örnek.pdb
+C:\Users\samet\source\repos\Linked List Örnek\Linked List Örnek\obj\Debug\Linked List Örnek.csproj.AssemblyReference.cache
+C:\Users\samet\source\repos\Linked List Örnek\Linked List Örnek\obj\Debug\Linked List Örnek.csproj.SuggestedBindingRedirects.cache
+C:\Users\samet\source\repos\Linked List Örnek\Linked List Örnek\obj\Debug\Linked List Örnek.csproj.CoreCompileInputs.cache
+C:\Users\samet\source\repos\Linked List Örnek\Linked List Örnek\obj\Debug\Linked List Örnek.exe
+C:\Users\samet\source\repos\Linked List Örnek\Linked List Örnek\obj\Debug\Linked List Örnek.pdb

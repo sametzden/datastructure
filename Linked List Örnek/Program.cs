@@ -42,6 +42,25 @@ namespace Linked_List_Örnek
                     list1.yazdır();
                     secim = Menu();
                 }
+                else if (secim == 5)
+                {
+                    Console.Write("araya eklemek istediginiz datayı girin: ");
+                    int data = Convert.ToInt32(Console.ReadLine());
+                    Console.Write("hangi indise data eklemek istediginizi girin: ");
+                    int indis = Convert.ToInt32(Console.ReadLine());
+                    list1.arayaEkle(indis, data);
+                    list1.yazdır();
+                    secim = Menu();
+                }
+                else if (secim == 6)
+                {
+                   
+                    Console.Write("hangi indisten data silmek istediginizi girin: ");
+                    int indis = Convert.ToInt32(Console.ReadLine());
+                    list1.aradanSil(indis);
+                    list1.yazdır();
+                    secim = Menu();
+                }
                 else if (secim == 9)
                 {
                     list1.yazdır();
@@ -59,6 +78,8 @@ namespace Linked_List_Örnek
             Console.WriteLine("2 - sona ekle");
             Console.WriteLine("3 - baştan sil");
             Console.WriteLine("4 - sondan sil");
+            Console.WriteLine("5 - araya ekle");
+            Console.WriteLine("6 - aradan sil");
             Console.WriteLine("9 - programdan çık");
             Console.Write("Seçiminiz: ");
             int secim = Convert.ToInt32(Console.ReadLine());
@@ -104,11 +125,11 @@ namespace Linked_List_Örnek
 
             public void sonaEkle(int data) 
             {
-                Block elaman = new Block(data);
+                Block eleman = new Block(data);
                 if (head == null)
                 {
                     // head null ise liste boş demek ve başa sona eleman eklemek headi elamana eşitlemekle olur
-                    head = elaman;
+                    head = eleman;
                 }
                 else
                 {
@@ -118,10 +139,51 @@ namespace Linked_List_Örnek
                         temp = temp.next;
                     }
                     // temp while'dan çıktıgında son elemanı tutmuş olur
-                    temp.next = elaman;
+                    temp.next = eleman;
                     
                 }
             }
+            public void arayaEkle(int indis,int data)
+            {
+                Block eleman = new Block(data);
+                if (head == null)
+                {
+                    // head null ise liste boş demek ve başa sona eleman eklemek headi elamana eşitlemekle olur
+                    head = eleman;
+                }
+                else if (indis == 0)
+                {
+                    basaEkle(data);
+                    
+                }
+                else
+                {
+                    int i = 0;
+                    Block temp = head;
+                    Block temp2 = temp;
+                    while (temp.next != null)
+                    {
+                        if (i == indis)
+                        {
+                            temp2.next = eleman;
+                            eleman.next = temp;
+                            
+                            break;
+
+                        }
+                        temp2 = temp;
+                        temp=temp2.next;
+                        i++;
+                    }
+                    if(i == indis)
+                    {
+                        sonaEkle(data);
+                    }
+                }
+
+            }
+
+
             public void bastanSil()
             {
                 if(head == null)
@@ -167,6 +229,36 @@ namespace Linked_List_Örnek
 
                 sondanocenki.next = null; // sondaki silindi
                 Console.WriteLine("sondan data silindi");
+            }
+            public void aradanSil(int indis)
+            {
+                Block temp = head;
+                Block temp2 = temp;
+                int  i = 0;
+                if (indis == 0)
+                {
+                    bastanSil();
+                }
+                else
+                {
+                    while (temp.next != null)
+                    {
+                        if (i == indis)
+                        {
+                            temp2.next = temp.next;
+
+                        }
+                        temp2 = temp;
+                        temp = temp.next;
+                        i++;
+
+                    }
+                    if (i == indis)
+                    {
+                        sondanSil();
+                    }
+
+                }
             }
             public void yazdır()
             {
